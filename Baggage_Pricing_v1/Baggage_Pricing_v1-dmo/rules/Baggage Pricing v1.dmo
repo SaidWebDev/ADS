@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.ibm.rules.studio.model.decisionmodel:DecisionModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:com.ibm.rules.studio.model.decisionmodel="http://com.ibm.rules.studio/model/decisionmodel.ecore">
+  <name>Baggage Pricing v1</name>
+  <uuid>462a8883-2b7f-4966-8b30-924151a9a270</uuid>
+  <locale>en_US</locale>
+  <definition><definitions xmlns="http://www.omg.org/spec/DMN/20180521/MODEL/" id="decisions" name="Baggage Pricing v1" namespace="">
+    <extensionElements>
+        <description xmlns="http://www.ibm.com/spec/ODM/dmn.xsd">Calculate passenger baggage fees.</description>
+        <locale xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" id="en_US"/>
+    </extensionElements>
+    <inputData id="node_0" name="Initial Booking">
+        <description>Booking information: number of bags, fare class, and fare basis code.</description>
+        <extensionElements>
+            <initialization xmlns="http://www.ibm.com/spec/ODM/dmn.xsd">
+                <output bomType="myModel.Booking" collection="false" name="the initial booking"/>
+            </initialization>
+        </extensionElements>
+        <variable id="node_0_ii" name="Initial Booking" typeRef="myModel.Booking"/>
+    </inputData>
+    <inputData id="node_2" name="Checked Baggage">
+        <description>Details about the baggage dropped at the drop-off counter: number of items,  weight.</description>
+        <extensionElements>
+            <initialization xmlns="http://www.ibm.com/spec/ODM/dmn.xsd">
+                <output bomType="myModel.Baggage" collection="false" name="the checked baggage"/>
+            </initialization>
+        </extensionElements>
+        <variable id="node_2_ii" name="Checked Baggage" typeRef="myModel.Baggage"/>
+    </inputData>
+    <inputData id="node_11" name="Frequent Flyer Status">
+        <description>Customer's frequent flyer status: bronze, silver, gold, platinum, or none.</description>
+        <extensionElements>
+            <initialization xmlns="http://www.ibm.com/spec/ODM/dmn.xsd">
+                <output bomType="myModel.FrequentFlyerLevel" collection="false" name="the frequent flyer status"/>
+            </initialization>
+        </extensionElements>
+        <variable id="node_11_ii" name="Frequent Flyer Status" typeRef="myModel.FrequentFlyerLevel"/>
+    </inputData>
+    <decision id="node_1" name="Extra Bags">
+        <description>Determine the number of extra checked bags.</description>
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="myModel.Booking" collection="false" name="the initial booking"/>
+                <input bomType="myModel.Baggage" collection="false" name="the checked baggage"/>
+                <output bomType="java.lang.Long" collection="false" name="the extra bags"/>
+                <rule defaultRule="false" href="Extra%20Bags/Determine%20number%20of%20extra%20bags.drl" kind="BusinessRule" name="Determine number of extra bags"/>
+                <rule defaultRule="false" href="Extra%20Bags/Print.drl" kind="BusinessRule" name="Print"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_1_ii" name="Extra Bags" typeRef="java.lang.Long"/>
+        <informationRequirement>
+            <requiredInput href="#node_0"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_2"/>
+        </informationRequirement>
+    </decision>
+    <decision id="node_3" name="Weight Allowance">
+        <description>Select the baggage weight allowance based on the customer's frequent flyer status.</description>
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="myModel.Baggage" collection="false" name="the checked baggage"/>
+                <input bomType="myModel.FrequentFlyerLevel" collection="false" name="the frequent flyer status"/>
+                <output bomType="java.lang.Double" collection="false" name="the weight allowance"/>
+                <rule defaultRule="false" href="Weight%20Allowance/Weight%20allowance%20according%20to%20status.dmt" kind="DecisionTable" name="Weight allowance according to status"/>
+                <rule defaultRule="false" href="Weight%20Allowance/Print.drl" kind="BusinessRule" name="Print"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_3_ii" name="Weight Allowance" typeRef="java.lang.Double"/>
+        <informationRequirement>
+            <requiredInput href="#node_2"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_11"/>
+        </informationRequirement>
+    </decision>
+    <decision id="node_4" name="Extra Weight">
+        <description>Determine the weight of excess baggage.</description>
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="java.lang.Double" collection="false" name="the weight allowance"/>
+                <input bomType="java.lang.Double" collection="false" name="the total weight"/>
+                <output bomType="java.lang.Double" collection="false" name="the extra weight"/>
+                <rule defaultRule="false" href="Extra%20Weight/Determine%20extra%20weight.drl" kind="BusinessRule" name="Determine extra weight"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_4_ii" name="Extra Weight" typeRef="java.lang.Double"/>
+        <informationRequirement>
+            <requiredInput href="#node_3"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_5"/>
+        </informationRequirement>
+    </decision>
+    <decision id="node_5" name="Total Weight">
+        <description>Determine the total baggage weight.</description>
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="myModel.Baggage" collection="false" name="the checked baggage"/>
+                <output bomType="java.lang.Double" collection="false" name="the total weight"/>
+                <rule defaultRule="false" href="Total%20Weight/Determine%20total%20weight.drl" kind="BusinessRule" name="Determine total weight"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_5_ii" name="Total Weight" typeRef="java.lang.Double"/>
+        <informationRequirement>
+            <requiredInput href="#node_2"/>
+        </informationRequirement>
+    </decision>
+    <decision id="node_7" name="Extra Weight Fees">
+        <description>Determine the amount of extra weight fees to be paid. Overweight bags are charged per kilogram, according to the airline policies.</description>
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="java.lang.Double" collection="false" name="the extra weight"/>
+                <input bomType="myModel.FrequentFlyerLevel" collection="false" name="the frequent flyer status"/>
+                <output bomType="java.lang.Double" collection="false" name="the extra weight fees"/>
+                <rule defaultRule="false" href="Extra%20Weight%20Fees/Price%20vs%20weight%20&amp;%20status.dmt" kind="DecisionTable" name="Price vs weight &amp; status"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_7_ii" name="Extra Weight Fees" typeRef="java.lang.Double"/>
+        <informationRequirement>
+            <requiredInput href="#node_4"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_11"/>
+        </informationRequirement>
+    </decision>
+    <decision id="node_10" name="Extra Bag Fees">
+        <description>Determine the amount of extra baggage fees to be paid. The price per extra bag varies depending on the fare class and the fare basis.</description>
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="myModel.Booking" collection="false" name="the initial booking"/>
+                <input bomType="java.lang.Long" collection="false" name="the extra bags"/>
+                <output bomType="java.lang.Double" collection="false" name="the extra bag fees"/>
+                <rule defaultRule="false" href="Extra%20Bag%20Fees/Extra%20bags%20table.dmt" kind="DecisionTable" name="Extra bags table"/>
+                <rule defaultRule="false" href="Extra%20Bag%20Fees/Zero%20bags.drl" kind="BusinessRule" name="Zero bags"/>
+                <rule defaultRule="false" href="Extra%20Bag%20Fees/Print%20fees.drl" kind="BusinessRule" name="Print fees"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_10_ii" name="Extra Bag Fees" typeRef="java.lang.Double"/>
+        <informationRequirement>
+            <requiredInput href="#node_0"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_1"/>
+        </informationRequirement>
+    </decision>
+    <decision id="node_9" name="Extra Baggage Fees">
+        <description>Determine the total amount of excess baggage fees to be paid.</description>
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="java.lang.Double" collection="false" name="the extra weight fees"/>
+                <input bomType="java.lang.Double" collection="false" name="the extra bag fees"/>
+                <output bomType="java.lang.Double" collection="false" name="the extra baggage fees"/>
+                <rule defaultRule="false" href="Extra%20Baggage%20Fees/Build%20results.drl" kind="BusinessRule" name="Build results"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_9_ii" name="Extra Baggage Fees" typeRef="java.lang.Double"/>
+        <informationRequirement>
+            <requiredInput href="#node_7"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_10"/>
+        </informationRequirement>
+    </decision>
+</definitions></definition>
+</com.ibm.rules.studio.model.decisionmodel:DecisionModel>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.brl:ActionRule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.brl="http://ilog.rules.studio/model/brl.ecore">
+  <name>Determine total weight</name>
+  <uuid>1f5c3a74-2c63-4646-930f-53bc6452c9af</uuid>
+  <locale>en_US</locale>
+  <definition><![CDATA[set decision to 0 ;
+for each Baggage Item called 'item' , in the bags of 'the checked baggage'  : 
+    - set decision to decision + the weight of item , ;]]></definition>
+</ilog.rules.studio.model.brl:ActionRule>

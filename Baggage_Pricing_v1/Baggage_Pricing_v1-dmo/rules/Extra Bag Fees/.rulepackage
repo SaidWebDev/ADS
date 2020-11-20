@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.base:RulePackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.base="http://ilog.rules.studio/model/base.ecore">
+  <name>Extra Bag Fees</name>
+  <uuid>d33fb4eb-9a0d-45cf-8e7d-604d47ff4836</uuid>
+</ilog.rules.studio.model.base:RulePackage>

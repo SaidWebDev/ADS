@@ -1,0 +1,85 @@
+
+package myModel;
+
+
+public class Baggage
+        property "de.generated" "true"
+{
+    public java.util.List bags domain 0,* class myModel.BaggageItem
+                property update "true";
+    public Baggage(java.util.List bags domain 0,* class myModel.BaggageItem)
+                property autoExpand "true"
+                property beanConstructor "true"
+                property groups "BALA"
+                property prototype "true";
+    public Baggage()
+                property "dataio.default" "true";
+    public void addTo_bags(myModel.BaggageItem bags)
+                property collectionAttribute "bags"
+                property update "true";
+    public void clear_bags()
+                property collectionAttribute "bags"
+                property update "true";
+    public void removeFrom_bags(myModel.BaggageItem bags)
+                property collectionAttribute "bags"
+                property update "true";
+    public void set_bags(java.util.Collection bags domain 0,* class myModel.BaggageItem)
+                property collectionAttribute "bags"
+                property update "true";
+}
+
+public class BaggageItem
+        property "de.generated" "true"
+{
+    public double weight
+                property update "true";
+    public BaggageItem(double weight)
+                property autoExpand "true"
+                property beanConstructor "true"
+                property groups "BALA"
+                property prototype "true";
+    public BaggageItem()
+                property "dataio.default" "true";
+}
+
+public class Booking
+        property "de.generated" "true"
+{
+    public long bags
+                property update "true";
+    public myModel.FareClass fareClass
+                property update "true";
+    public string fareCode
+                property update "true";
+    public Booking(long bags, myModel.FareClass fareClass, string fareCode)
+                property autoExpand "true"
+                property beanConstructor "true"
+                property groups "BALA"
+                property prototype "true";
+    public Booking()
+                property "dataio.default" "true";
+}
+
+public class FareClass
+        extends java.lang.Enum
+        property "de.generated" "true"
+{
+    domain {static Business, static Economy, static First, static PremiumEconomy}
+    public static final readonly myModel.FareClass Business;
+    public static final readonly myModel.FareClass Economy;
+    public static final readonly myModel.FareClass First;
+    public static final readonly myModel.FareClass PremiumEconomy;
+}
+
+public class FrequentFlyerLevel
+        extends java.lang.Enum
+        property "de.generated" "true"
+{
+    domain {static Bronze, static Gold, static None, static Platinum, static Silver}
+    public static final readonly myModel.FrequentFlyerLevel Bronze;
+    public static final readonly myModel.FrequentFlyerLevel Gold;
+    public static final readonly myModel.FrequentFlyerLevel None;
+    public static final readonly myModel.FrequentFlyerLevel Platinum;
+    public static final readonly myModel.FrequentFlyerLevel Silver;
+}
+

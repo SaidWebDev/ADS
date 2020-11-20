@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.brl:ActionRule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.brl="http://ilog.rules.studio/model/brl.ecore">
+  <name>Print</name>
+  <uuid>8c1f996e-a382-4dae-8d43-75908468212c</uuid>
+  <locale>en_US</locale>
+  <definition><![CDATA[print "With " + the number of Baggage Items in the bags of 'the checked baggage' +  " bags, the maximum allowed weight is " + decision ;]]></definition>
+</ilog.rules.studio.model.brl:ActionRule>

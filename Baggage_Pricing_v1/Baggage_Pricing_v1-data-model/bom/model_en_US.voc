@@ -1,0 +1,45 @@
+
+# myModel.Baggage
+myModel.Baggage#concept.label = Baggage
+myModel.Baggage.Baggage(java.util.List)#phrase.navigation = a new {Baggage} where {0, bag} 
+myModel.Baggage.addTo_bags(myModel.BaggageItem)#phrase.action = add {0} to the bags of {this}
+myModel.Baggage.bags#phrase.action = set the bags of {this} to {bag}
+myModel.Baggage.bags#phrase.navigation = {bag} of {this}
+myModel.Baggage.clear_bags()#phrase.action = clear the bags of {this}
+myModel.Baggage.removeFrom_bags(myModel.BaggageItem)#phrase.action = remove {0} from the bags of {this}
+
+# myModel.BaggageItem
+myModel.BaggageItem#concept.label = Baggage Item
+myModel.BaggageItem.BaggageItem(double)#phrase.navigation = a new {Baggage Item} where {0, weight} 
+myModel.BaggageItem.weight#phrase.action = set the weight of {this} to {weight}
+myModel.BaggageItem.weight#phrase.addition_setter = add {weight} to the weight of {this}
+myModel.BaggageItem.weight#phrase.navigation = {weight} of {this}
+myModel.BaggageItem.weight#phrase.subtraction_setter = subtract {weight} from the weight of {this}
+
+# myModel.Booking
+myModel.Booking#concept.label = Booking
+myModel.Booking.Booking(long,myModel.FareClass,java.lang.String)#phrase.navigation = a new {Booking} where {0, bags} {1, fare class} {2, fare code} 
+myModel.Booking.bags#phrase.action = set the bags of {this} to {bags}
+myModel.Booking.bags#phrase.addition_setter = add {bags} to the bags of {this}
+myModel.Booking.bags#phrase.navigation = {bags} of {this}
+myModel.Booking.bags#phrase.subtraction_setter = subtract {bags} from the bags of {this}
+myModel.Booking.fareClass#phrase.action = set the fare class of {this} to {fare class}
+myModel.Booking.fareClass#phrase.clearer = clear the fare class of {this}
+myModel.Booking.fareClass#phrase.navigation = {fare class} of {this}
+myModel.Booking.fareCode#phrase.action = set the fare code of {this} to {fare code}
+myModel.Booking.fareCode#phrase.navigation = {fare code} of {this}
+
+# myModel.FareClass
+myModel.FareClass#concept.label = Fare Class
+myModel.FareClass.Business#instance.label = Business
+myModel.FareClass.Economy#instance.label = Economy
+myModel.FareClass.First#instance.label = First
+myModel.FareClass.PremiumEconomy#instance.label = PremiumEconomy
+
+# myModel.FrequentFlyerLevel
+myModel.FrequentFlyerLevel#concept.label = Frequent Flyer Level
+myModel.FrequentFlyerLevel.Bronze#instance.label = Bronze
+myModel.FrequentFlyerLevel.Gold#instance.label = Gold
+myModel.FrequentFlyerLevel.None#instance.label = None
+myModel.FrequentFlyerLevel.Platinum#instance.label = Platinum
+myModel.FrequentFlyerLevel.Silver#instance.label = Silver

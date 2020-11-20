@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.brl:ActionRule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.brl="http://ilog.rules.studio/model/brl.ecore">
+  <name>Determine extra weight</name>
+  <uuid>5b32c552-43e6-4b45-be5e-58b369df46bf</uuid>
+  <locale>en_US</locale>
+  <definition><![CDATA[if 'the total weight' is more than 'the weight allowance' 
+then
+    set decision to 'the total weight' - 'the weight allowance'  ;
+    print "Extra weight:" + decision ;
+else
+    set decision to 0 ;]]></definition>
+</ilog.rules.studio.model.brl:ActionRule>

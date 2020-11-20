@@ -1,0 +1,15 @@
+{
+  "theInitialBooking" : {
+    "bags" : 1,
+    "fareClass" : "Business",
+    "fareCode" : "Y"
+  },
+  "theCheckedBaggage" : {
+    "bags" : [ {
+      "weight" : 20
+    }, {
+      "weight" : 20
+    } ]
+  },
+  "theFrequentFlyerStatus" : "Gold"
+}
