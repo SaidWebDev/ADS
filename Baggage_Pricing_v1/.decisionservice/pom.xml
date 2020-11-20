@@ -13,12 +13,12 @@
     <dependencies>
         <dependency>
             <groupId>decisions.baggage_pricing_v1</groupId>
-            <artifactId>BaggagePricingV1_DataModel</artifactId>
+            <artifactId>baggagePricing</artifactId>
             <version>1.0.0</version>
         </dependency>
         <dependency>
             <groupId>decisions.baggage_pricing_v1</groupId>
-            <artifactId>BaggagePricingV1</artifactId>
+            <artifactId>BaggagePricingV1_DataModel</artifactId>
             <version>1.0.0</version>
         </dependency>
         <dependency>
@@ -50,7 +50,7 @@
                             <artifactItems>
                                 <artifactItem>
                                     <groupId>decisions.baggage_pricing_v1</groupId>
-                                    <artifactId>BaggagePricingV1_DataModel</artifactId>
+                                    <artifactId>baggagePricing</artifactId>
                                     <version>1.0.0</version>
                                     <type>jar</type>
                                     <overWrite>false</overWrite>
@@ -59,7 +59,7 @@
                                 </artifactItem>
                                 <artifactItem>
                                     <groupId>decisions.baggage_pricing_v1</groupId>
-                                    <artifactId>BaggagePricingV1</artifactId>
+                                    <artifactId>BaggagePricingV1_DataModel</artifactId>
                                     <version>1.0.0</version>
                                     <type>jar</type>
                                     <overWrite>false</overWrite>

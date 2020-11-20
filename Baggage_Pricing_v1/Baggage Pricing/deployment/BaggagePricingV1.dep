@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<com.ibm.rules.studio.model.decisionservice:Deployment xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:com.ibm.rules.studio.model.decisionservice="http://com.ibm.rules.studio/model/decisionservice.ecore" ruleAppName="decisions.baggage_pricing_v1:BaggagePricingV1" ruleAppVersion="1.0.0" packageName="myModel" managingXom="true">
-  <name>BaggagePricingV1</name>
+<com.ibm.rules.studio.model.decisionservice:Deployment xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:com.ibm.rules.studio.model.decisionservice="http://com.ibm.rules.studio/model/decisionservice.ecore" ruleAppName="decisions.baggage_pricing_v1:baggagePricing" ruleAppVersion="1.0.0" packageName="myModel" managingXom="true">
+  <name>baggagePricing</name>
   <uuid>d19afcfe-68b0-4596-bfc3-4e03fbd449c2</uuid>
   <locales>en_US</locales>
   <operations operationName="BaggagePricingV1">

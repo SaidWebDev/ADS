@@ -8,7 +8,7 @@
     </parent>
 
     <groupId>decisions.baggage_pricing_v1</groupId>
-    <artifactId>BaggagePricingV1</artifactId>
+    <artifactId>baggagePricing</artifactId>
     <version>1.0.0</version>
     <packaging>decision-library</packaging>
 
@@ -20,7 +20,7 @@
                 <configuration>
                     <deployments>
                         <deployment>
-                            <name>BaggagePricingV1</name>
+                            <name>baggagePricing</name>
                         </deployment>
                     </deployments>
                 <packageName>myModel</packageName>

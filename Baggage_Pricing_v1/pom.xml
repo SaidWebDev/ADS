@@ -13,8 +13,8 @@
     <ml-integration-runtime.version><![CDATA[6.0.8]]></ml-integration-runtime.version>
     </properties>
     <modules>
+        <module>Baggage Pricing</module>
         <module>Baggage_Pricing_v1-data-model</module>
-        <module>Baggage_Pricing_v1-dmo</module>
         <module>.decisionservice</module>
     </modules>
 
