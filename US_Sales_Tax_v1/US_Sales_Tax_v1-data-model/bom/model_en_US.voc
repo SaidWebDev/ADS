@@ -1,0 +1,38 @@
+
+# myModel.Results
+myModel.Results#concept.label = Results
+myModel.Results.Results(double,double,myModel.SalesTax,boolean)#phrase.navigation = a new {Results} where {0, average amount} {1, max amount} {2, sales tax} {3, valid} 
+myModel.Results.averageAmount#phrase.action = set the average amount of {this} to {average amount}
+myModel.Results.averageAmount#phrase.addition_setter = add {average amount} to the average amount of {this}
+myModel.Results.averageAmount#phrase.navigation = {average amount} of {this}
+myModel.Results.averageAmount#phrase.subtraction_setter = subtract {average amount} from the average amount of {this}
+myModel.Results.maxAmount#phrase.action = set the max amount of {this} to {max amount}
+myModel.Results.maxAmount#phrase.addition_setter = add {max amount} to the max amount of {this}
+myModel.Results.maxAmount#phrase.navigation = {max amount} of {this}
+myModel.Results.maxAmount#phrase.subtraction_setter = subtract {max amount} from the max amount of {this}
+myModel.Results.salesTax#phrase.action = set the sales tax of {this} to {sales tax}
+myModel.Results.salesTax#phrase.clearer = clear the sales tax of {this}
+myModel.Results.salesTax#phrase.navigation = {sales tax} of {this}
+myModel.Results.valid#phrase.action[0] = {this} gets valid only if {valid}
+myModel.Results.valid#phrase.action[1] = make it {valid} that {this} is valid
+myModel.Results.valid#phrase.action[1].deprecated = true
+myModel.Results.valid#phrase.navigation = {this} is valid
+myModel.Results.valid#phrase.negative_predicate = {this} is not valid
+myModel.Results.valid#phrase.negative_predicate_setter = {this} does not get valid
+myModel.Results.valid#phrase.positive_predicate_setter = {this} gets valid
+
+# myModel.SalesTax
+myModel.SalesTax#concept.label = Sales Tax
+myModel.SalesTax.SalesTax(double,double,double)#phrase.navigation = a new {Sales Tax} where {0, average local tax} {1, max local tax} {2, state tax} 
+myModel.SalesTax.averageLocalTax#phrase.action = set the average local tax of {this} to {average local tax}
+myModel.SalesTax.averageLocalTax#phrase.addition_setter = add {average local tax} to the average local tax of {this}
+myModel.SalesTax.averageLocalTax#phrase.navigation = {average local tax} of {this}
+myModel.SalesTax.averageLocalTax#phrase.subtraction_setter = subtract {average local tax} from the average local tax of {this}
+myModel.SalesTax.maxLocalTax#phrase.action = set the max local tax of {this} to {max local tax}
+myModel.SalesTax.maxLocalTax#phrase.addition_setter = add {max local tax} to the max local tax of {this}
+myModel.SalesTax.maxLocalTax#phrase.navigation = {max local tax} of {this}
+myModel.SalesTax.maxLocalTax#phrase.subtraction_setter = subtract {max local tax} from the max local tax of {this}
+myModel.SalesTax.stateTax#phrase.action = set the state tax of {this} to {state tax}
+myModel.SalesTax.stateTax#phrase.addition_setter = add {state tax} to the state tax of {this}
+myModel.SalesTax.stateTax#phrase.navigation = {state tax} of {this}
+myModel.SalesTax.stateTax#phrase.subtraction_setter = subtract {state tax} from the state tax of {this}

@@ -1,0 +1,42 @@
+
+package myModel;
+
+
+public class Results
+        property "de.generated" "true"
+{
+    public double averageAmount
+                property update "true";
+    public double maxAmount
+                property update "true";
+    public myModel.SalesTax salesTax
+                property update "true";
+    public boolean valid
+                property update "true";
+    public Results(double averageAmount, double maxAmount, myModel.SalesTax salesTax, boolean valid)
+                property autoExpand "true"
+                property beanConstructor "true"
+                property groups "BALA"
+                property prototype "true";
+    public Results()
+                property "dataio.default" "true";
+}
+
+public class SalesTax
+        property "de.generated" "true"
+{
+    public double averageLocalTax
+                property update "true";
+    public double maxLocalTax
+                property update "true";
+    public double stateTax
+                property update "true";
+    public SalesTax(double averageLocalTax, double maxLocalTax, double stateTax)
+                property autoExpand "true"
+                property beanConstructor "true"
+                property groups "BALA"
+                property prototype "true";
+    public SalesTax()
+                property "dataio.default" "true";
+}
+
