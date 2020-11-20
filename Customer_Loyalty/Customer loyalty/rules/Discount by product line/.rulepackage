@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.base:RulePackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.base="http://ilog.rules.studio/model/base.ecore">
+  <name>Discount by product line</name>
+  <uuid>a8b08cf4-1325-4226-94ff-a685ede8b20f</uuid>
+</ilog.rules.studio.model.base:RulePackage>

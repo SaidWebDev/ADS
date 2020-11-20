@@ -1,0 +1,46 @@
+{
+  "theShoppingCart" : {
+    "item" : [ {
+      "unitPrice" : 0.7,
+      "quantity" : 30,
+      "name" : "Merguez",
+      "discountPerCent" : 0,
+      "totalLine" : 0
+    }, {
+      "unitPrice" : 1.2,
+      "quantity" : 4,
+      "name" : "Steack",
+      "discountPerCent" : 0,
+      "totalLine" : 0
+    }, {
+      "unitPrice" : 0.9,
+      "quantity" : 5,
+      "name" : "Tomato",
+      "discountPerCent" : 0,
+      "totalLine" : 0
+    }, {
+      "unitPrice" : 6,
+      "quantity" : 5,
+      "name" : "Crackers",
+      "discountPerCent" : 0,
+      "totalLine" : 0
+    }, {
+      "unitPrice" : 1.8,
+      "quantity" : 24,
+      "name" : "Beer",
+      "discountPerCent" : 0,
+      "totalLine" : 0
+    }, {
+      "unitPrice" : 1.6,
+      "quantity" : 3,
+      "name" : "Yogurt",
+      "discountPerCent" : 0,
+      "totalLine" : 0
+    } ]
+  },
+  "theCustomerLoyalty" : {
+    "name" : "Doe",
+    "email" : "john.doe@ibm.com",
+    "loyaltyPoints" : 326
+  }
+}

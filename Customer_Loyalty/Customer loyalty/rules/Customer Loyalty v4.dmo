@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.ibm.rules.studio.model.decisionmodel:DecisionModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:com.ibm.rules.studio.model.decisionmodel="http://com.ibm.rules.studio/model/decisionmodel.ecore">
+  <name>Customer Loyalty v4</name>
+  <uuid>93b47014-887d-4880-89a0-9df69973aa6d</uuid>
+  <locale>en_US</locale>
+  <definition><definitions xmlns="http://www.omg.org/spec/DMN/20180521/MODEL/" id="decisions" name="Customer Loyalty v4" namespace="">
+    <extensionElements>
+        <description xmlns="http://www.ibm.com/spec/ODM/dmn.xsd">Calculate loyalty discount and shopping cart total.</description>
+        <locale xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" id="en_US"/>
+    </extensionElements>
+    <inputData id="node_0" name="Shopping Cart">
+        <description>List of items in the shopping cart.</description>
+        <extensionElements>
+            <initialization xmlns="http://www.ibm.com/spec/ODM/dmn.xsd">
+                <output bomType="myModel.ShoppingCart" collection="false" name="the shopping cart"/>
+            </initialization>
+        </extensionElements>
+        <variable id="node_0_ii" name="Shopping Cart" typeRef="myModel.ShoppingCart"/>
+    </inputData>
+    <inputData id="node_8" name="Customer loyalty">
+        <description>Customer data: name, email, loyalty points.</description>
+        <extensionElements>
+            <initialization xmlns="http://www.ibm.com/spec/ODM/dmn.xsd">
+                <output bomType="myModel.Customer" collection="false" name="the customer loyalty"/>
+            </initialization>
+        </extensionElements>
+        <variable id="node_8_ii" name="Customer loyalty" typeRef="myModel.Customer"/>
+    </inputData>
+    <decision id="node_1" name="Discount by product line">
+        <description>Applies discounts on some types of products.</description>
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="myModel.ShoppingCart" collection="false" name="the shopping cart"/>
+                <output bomType="myModel.ShoppingCart" collection="false" name="the discount by product line"/>
+                <rule defaultRule="false" href="Discount%20by%20product%20line/init.drl" kind="BusinessRule" name="init"/>
+                <rule defaultRule="false" href="Discount%20by%20product%20line/set%20discount.dmt" kind="DecisionTable" name="set discount"/>
+                <rule defaultRule="false" href="Discount%20by%20product%20line/compute%20line%20total.drl" kind="BusinessRule" name="compute line total"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_1_ii" name="Discount by product line" typeRef="myModel.ShoppingCart"/>
+        <informationRequirement>
+            <requiredInput href="#node_0"/>
+        </informationRequirement>
+    </decision>
+    <decision id="node_3" name="Discount by product quantity">
+        <description>Applies discounts on some products based on the quantity: buy 3 get 1 free, buy 6 get 2 free, etc.</description>
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="myModel.ShoppingCart" collection="false" name="the shopping cart"/>
+                <output bomType="myModel.ShoppingCart" collection="false" name="the discount by product quantity"/>
+                <rule defaultRule="false" href="Discount%20by%20product%20quantity/init.drl" kind="BusinessRule" name="init"/>
+                <rule defaultRule="false" href="Discount%20by%20product%20quantity/set%20discount%20by%20quantity.dmt" kind="DecisionTable" name="set discount by quantity"/>
+                <rule defaultRule="false" href="Discount%20by%20product%20quantity/calculate%20discount%20percentage.drl" kind="BusinessRule" name="calculate discount percentage"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_3_ii" name="Discount by product quantity" typeRef="myModel.ShoppingCart"/>
+        <informationRequirement>
+            <requiredInput href="#node_0"/>
+        </informationRequirement>
+    </decision>
+    <decision id="node_2" name="Best discount">
+        <description>Applies the highest discount between the product line discount and the product quantity discount.</description>
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="myModel.ShoppingCart" collection="false" name="the discount by product line"/>
+                <input bomType="myModel.ShoppingCart" collection="false" name="the discount by product quantity"/>
+                <output bomType="myModel.ShoppingCart" collection="false" name="the best discount"/>
+                <rule defaultRule="false" href="Best%20discount/init.drl" kind="BusinessRule" name="init"/>
+                <rule defaultRule="false" href="Best%20discount/best%20discount.drl" kind="BusinessRule" name="best discount"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_2_ii" name="Best discount" typeRef="myModel.ShoppingCart"/>
+        <informationRequirement>
+            <requiredInput href="#node_1"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_3"/>
+        </informationRequirement>
+    </decision>
+    <decision id="node_4" name="Total after discount on products">
+        <description>Total of the shopping cart after the application of the discount on the products.</description>
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="myModel.ShoppingCart" collection="false" name="the best discount"/>
+                <output bomType="java.lang.Double" collection="false" name="the total after discount on products"/>
+                <rule defaultRule="false" href="Total%20after%20discount%20on%20products/total%20with%20discount.drl" kind="BusinessRule" name="total with discount"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_4_ii" name="Total after discount on products" typeRef="java.lang.Double"/>
+        <informationRequirement>
+            <requiredInput href="#node_2"/>
+        </informationRequirement>
+    </decision>
+    <decision id="node_5" name="Cart total">
+        <description>Total of the shopping cart with catalog prices.</description>
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="myModel.ShoppingCart" collection="false" name="the shopping cart"/>
+                <output bomType="java.lang.Double" collection="false" name="the cart total"/>
+                <rule defaultRule="false" href="Cart%20total/total%20price%20without%20discount.drl" kind="BusinessRule" name="total price without discount"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_5_ii" name="Cart total" typeRef="java.lang.Double"/>
+        <informationRequirement>
+            <requiredInput href="#node_0"/>
+        </informationRequirement>
+    </decision>
+    <decision id="node_6" name="Discount on cart total">
+        <description>Price of the shopping cart after applying a discount based on its initial total price.</description>
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="java.lang.Double" collection="false" name="the cart total"/>
+                <output bomType="java.lang.Double" collection="false" name="the discount on cart total"/>
+                <rule defaultRule="false" href="Discount%20on%20cart%20total/discount%20on%20total%20cart.dmt" kind="DecisionTable" name="discount on total cart"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_6_ii" name="Discount on cart total" typeRef="java.lang.Double"/>
+        <informationRequirement>
+            <requiredInput href="#node_5"/>
+        </informationRequirement>
+    </decision>
+    <decision id="node_7" name="Grand total and loyalty reward">
+        <description>Total of the shopping cart after applying the highest discount between product discount and cart total discount, and loyalty reward.</description>
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="java.lang.Double" collection="false" name="the total after discount on products"/>
+                <input bomType="java.lang.Double" collection="false" name="the discount on cart total"/>
+                <input bomType="myModel.Customer" collection="false" name="the customer loyalty"/>
+                <output bomType="java.lang.Double" collection="false" name="the grand total and loyalty reward"/>
+                <rule defaultRule="false" href="Grand%20total%20and%20loyalty%20reward/total%20cart%20after%20discount.drl" kind="BusinessRule" name="total cart after discount"/>
+                <rule defaultRule="false" href="Grand%20total%20and%20loyalty%20reward/loyalty%20discount%20and%20gift.dmt" kind="DecisionTable" name="loyalty discount and gift"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_7_ii" name="Grand total and loyalty reward" typeRef="java.lang.Double"/>
+        <informationRequirement>
+            <requiredInput href="#node_4"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_6"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_8"/>
+        </informationRequirement>
+    </decision>
+</definitions></definition>
+</com.ibm.rules.studio.model.decisionmodel:DecisionModel>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.ibm.rules.studio.model.decisionservice:Operation xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:com.ibm.rules.studio.model.decisionservice="http://com.ibm.rules.studio/model/decisionservice.ecore" rulesetName="CustomerLoyaltyV4" targetRuleProjectName="Customer loyalty">
+  <name>customerLoyalty</name>
+  <uuid>359c99ad-b356-4367-9c83-d63bdbe833c6</uuid>
+  <decisionModel href="../rules/Customer%20Loyalty%20v4.dmo#93b47014-887d-4880-89a0-9df69973aa6d"/>
+  <targetRuleProject href="../../Customer%20loyalty#3a4ae506-425d-4627-872f-8cec3e7b2b62"/>
+</com.ibm.rules.studio.model.decisionservice:Operation>

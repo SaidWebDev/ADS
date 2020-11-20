@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.base:RulePackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.base="http://ilog.rules.studio/model/base.ecore">
+  <name>Best discount</name>
+  <uuid>6eed3436-a30e-4424-85e2-9cf6b4889d73</uuid>
+</ilog.rules.studio.model.base:RulePackage>

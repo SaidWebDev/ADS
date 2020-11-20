@@ -1,0 +1,43 @@
+
+# myModel.Customer
+myModel.Customer#concept.label = Customer
+myModel.Customer.Customer(java.lang.String,long,java.lang.String)#phrase.navigation = a new {Customer} where {0, email} {1, loyalty points} {2, name} 
+myModel.Customer.email#phrase.action = set the email of {this} to {email}
+myModel.Customer.email#phrase.navigation = {email} of {this}
+myModel.Customer.loyaltyPoints#phrase.action = set the loyalty points of {this} to {loyalty points}
+myModel.Customer.loyaltyPoints#phrase.addition_setter = add {loyalty points} to the loyalty points of {this}
+myModel.Customer.loyaltyPoints#phrase.navigation = {loyalty points} of {this}
+myModel.Customer.loyaltyPoints#phrase.subtraction_setter = subtract {loyalty points} from the loyalty points of {this}
+myModel.Customer.name#phrase.action = set the name of {this} to {name}
+myModel.Customer.name#phrase.navigation = {name} of {this}
+
+# myModel.Item
+myModel.Item#concept.label = Item
+myModel.Item.Item(double,java.lang.String,long,double,double)#phrase.navigation = a new {Item} where {0, discount per cent} {1, name} {2, quantity} {3, total line} {4, unit price} 
+myModel.Item.discountPerCent#phrase.action = set the discount per cent of {this} to {discount per cent}
+myModel.Item.discountPerCent#phrase.addition_setter = add {discount per cent} to the discount per cent of {this}
+myModel.Item.discountPerCent#phrase.navigation = {discount per cent} of {this}
+myModel.Item.discountPerCent#phrase.subtraction_setter = subtract {discount per cent} from the discount per cent of {this}
+myModel.Item.name#phrase.action = set the name of {this} to {name}
+myModel.Item.name#phrase.navigation = {name} of {this}
+myModel.Item.quantity#phrase.action = set the quantity of {this} to {quantity}
+myModel.Item.quantity#phrase.addition_setter = add {quantity} to the quantity of {this}
+myModel.Item.quantity#phrase.navigation = {quantity} of {this}
+myModel.Item.quantity#phrase.subtraction_setter = subtract {quantity} from the quantity of {this}
+myModel.Item.totalLine#phrase.action = set the total line of {this} to {total line}
+myModel.Item.totalLine#phrase.addition_setter = add {total line} to the total line of {this}
+myModel.Item.totalLine#phrase.navigation = {total line} of {this}
+myModel.Item.totalLine#phrase.subtraction_setter = subtract {total line} from the total line of {this}
+myModel.Item.unitPrice#phrase.action = set the unit price of {this} to {unit price}
+myModel.Item.unitPrice#phrase.addition_setter = add {unit price} to the unit price of {this}
+myModel.Item.unitPrice#phrase.navigation = {unit price} of {this}
+myModel.Item.unitPrice#phrase.subtraction_setter = subtract {unit price} from the unit price of {this}
+
+# myModel.ShoppingCart
+myModel.ShoppingCart#concept.label = Shopping Cart
+myModel.ShoppingCart.ShoppingCart(java.util.List)#phrase.navigation = a new {Shopping Cart} where {0, item} 
+myModel.ShoppingCart.addTo_item(myModel.Item)#phrase.action = add {0} to the items of {this}
+myModel.ShoppingCart.clear_item()#phrase.action = clear the items of {this}
+myModel.ShoppingCart.item#phrase.action = set the items of {this} to {item}
+myModel.ShoppingCart.item#phrase.navigation = {item} of {this}
+myModel.ShoppingCart.removeFrom_item(myModel.Item)#phrase.action = remove {0} from the items of {this}

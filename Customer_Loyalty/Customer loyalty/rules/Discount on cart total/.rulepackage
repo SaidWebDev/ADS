@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.base:RulePackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.base="http://ilog.rules.studio/model/base.ecore">
+  <name>Discount on cart total</name>
+  <uuid>dc80a977-a2af-4ab3-b811-ee33a088f0b4</uuid>
+</ilog.rules.studio.model.base:RulePackage>

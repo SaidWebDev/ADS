@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.base:RulePackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.base="http://ilog.rules.studio/model/base.ecore">
+  <name>Total after discount on products</name>
+  <uuid>bdcfdcd4-d1f2-4807-9602-a48caa272fbd</uuid>
+</ilog.rules.studio.model.base:RulePackage>
