@@ -13,8 +13,8 @@
     <ml-integration-runtime.version><![CDATA[6.0.8]]></ml-integration-runtime.version>
     </properties>
     <modules>
+        <module>Sales tax</module>
         <module>US_Sales_Tax_v1-data-model</module>
-        <module>US_Sales_Tax_v1-dmo</module>
         <module>.decisionservice</module>
     </modules>
 

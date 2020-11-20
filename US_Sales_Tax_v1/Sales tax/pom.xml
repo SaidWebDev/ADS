@@ -8,7 +8,7 @@
     </parent>
 
     <groupId>decisions.us_sales_tax_v1</groupId>
-    <artifactId>USSalesTaxV1</artifactId>
+    <artifactId>salesTax</artifactId>
     <version>1.0.0</version>
     <packaging>decision-library</packaging>
 
@@ -20,7 +20,7 @@
                 <configuration>
                     <deployments>
                         <deployment>
-                            <name>USSalesTaxV1</name>
+                            <name>salesTax</name>
                         </deployment>
                     </deployments>
                 <packageName>myModel</packageName>

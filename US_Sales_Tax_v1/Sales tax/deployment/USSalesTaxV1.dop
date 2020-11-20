@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.ibm.rules.studio.model.decisionservice:Operation xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:com.ibm.rules.studio.model.decisionservice="http://com.ibm.rules.studio/model/decisionservice.ecore" rulesetName="USSalesTaxV1" targetRuleProjectName="Sales tax">
+  <name>salesTax</name>
+  <uuid>6b1eb8fa-486e-4db2-ab52-628e32e7a0fa</uuid>
+  <decisionModel href="../rules/US%20Sales%20Tax%20v1.dmo#d71c2734-f7ca-42d0-b0ce-71c49a65acbe"/>
+  <targetRuleProject href="../../Sales%20tax#8a48b586-8b94-49bd-af03-a1c00ec131fa"/>
+</com.ibm.rules.studio.model.decisionservice:Operation>

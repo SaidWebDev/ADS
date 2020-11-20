@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<com.ibm.rules.studio.model.decisionservice:Deployment xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:com.ibm.rules.studio.model.decisionservice="http://com.ibm.rules.studio/model/decisionservice.ecore" ruleAppName="decisions.us_sales_tax_v1:USSalesTaxV1" ruleAppVersion="1.0.0" packageName="myModel" managingXom="true">
-  <name>USSalesTaxV1</name>
+<com.ibm.rules.studio.model.decisionservice:Deployment xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:com.ibm.rules.studio.model.decisionservice="http://com.ibm.rules.studio/model/decisionservice.ecore" ruleAppName="decisions.us_sales_tax_v1:salesTax" ruleAppVersion="1.0.0" packageName="myModel" managingXom="true">
+  <name>salesTax</name>
   <uuid>18ea501c-c12a-4d06-ab8e-2bbc35ef084f</uuid>
   <locales>en_US</locales>
   <operations operationName="USSalesTaxV1">

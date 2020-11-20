@@ -13,12 +13,12 @@
     <dependencies>
         <dependency>
             <groupId>decisions.us_sales_tax_v1</groupId>
-            <artifactId>USSalesTaxV1_DataModel</artifactId>
+            <artifactId>salesTax</artifactId>
             <version>1.0.0</version>
         </dependency>
         <dependency>
             <groupId>decisions.us_sales_tax_v1</groupId>
-            <artifactId>USSalesTaxV1</artifactId>
+            <artifactId>USSalesTaxV1_DataModel</artifactId>
             <version>1.0.0</version>
         </dependency>
         <dependency>
@@ -50,7 +50,7 @@
                             <artifactItems>
                                 <artifactItem>
                                     <groupId>decisions.us_sales_tax_v1</groupId>
-                                    <artifactId>USSalesTaxV1_DataModel</artifactId>
+                                    <artifactId>salesTax</artifactId>
                                     <version>1.0.0</version>
                                     <type>jar</type>
                                     <overWrite>false</overWrite>
@@ -59,7 +59,7 @@
                                 </artifactItem>
                                 <artifactItem>
                                     <groupId>decisions.us_sales_tax_v1</groupId>
-                                    <artifactId>USSalesTaxV1</artifactId>
+                                    <artifactId>USSalesTaxV1_DataModel</artifactId>
                                     <version>1.0.0</version>
                                     <type>jar</type>
                                     <overWrite>false</overWrite>
