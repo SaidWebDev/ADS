@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.ibm.rules.studio.model.decisionmodel:DecisionModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:com.ibm.rules.studio.model.decisionmodel="http://com.ibm.rules.studio/model/decisionmodel.ecore">
+  <name>US Sales Tax</name>
+  <uuid>6f96ee3b-6172-4a33-952d-f7f3c76173a1</uuid>
+  <locale>en_US</locale>
+  <definition><definitions xmlns="http://www.omg.org/spec/DMN/20180521/MODEL/" id="decisions" name="US Sales Tax" namespace="">
+    <extensionElements>
+        <description xmlns="http://www.ibm.com/spec/ODM/dmn.xsd">Estimate the gross price of an item based on State and local tax rates.</description>
+        <locale xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" id="en_US"/>
+    </extensionElements>
+    <inputData id="node_0" name="State Name">
+        <description>Full or abbreviated State name (such as AZ, FL, NY, or TX).</description>
+        <extensionElements>
+            <initialization xmlns="http://www.ibm.com/spec/ODM/dmn.xsd">
+                <output bomType="java.lang.String" collection="false" name="the state name"/>
+            </initialization>
+        </extensionElements>
+        <variable id="node_0_ii" name="State Name" typeRef="java.lang.String"/>
+    </inputData>
+    <inputData id="node_2" name="Net Price">
+        <description>Net price of the item (excluding tax).</description>
+        <extensionElements>
+            <initialization xmlns="http://www.ibm.com/spec/ODM/dmn.xsd">
+                <output bomType="java.lang.Double" collection="false" name="the net price"/>
+            </initialization>
+        </extensionElements>
+        <variable id="node_2_ii" name="Net Price" typeRef="java.lang.Double"/>
+    </inputData>
+    <decision id="node_1" name="Sales Tax">
+        <description>Select the right sales tax rates to apply to the item depending on the State of purchase. </description>
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="java.lang.String" collection="false" name="the full state name"/>
+                <output bomType="myModel.SalesTax" collection="false" name="the sales tax"/>
+                <rule defaultRule="false" href="Sales%20Tax/Tax%20rates.dmt" kind="DecisionTable" name="Tax rates"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_1_ii" name="Sales Tax" typeRef="myModel.SalesTax"/>
+        <informationRequirement>
+            <requiredInput href="#node_4"/>
+        </informationRequirement>
+    </decision>
+    <decision id="node_3" name="Results">
+        <description>Apply sales tax to the net price. The result is an estimation of the gross price, based on the average and maximum tax rates for a given State.
+            The output also indicates whether the result is valid or not. For example, the result is considered invalid if the State is not recognized.</description>
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="myModel.SalesTax" collection="false" name="the sales tax"/>
+                <input bomType="java.lang.Double" collection="false" name="the net price"/>
+                <output bomType="myModel.Results" collection="false" name="the results"/>
+                <rule defaultRule="true" href="Results/output-default-setting.drl" kind="BusinessRule" name="output-default-setting"/>
+                <rule defaultRule="false" href="Results/Output%20decision.drl" kind="BusinessRule" name="Output decision"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_3_ii" name="Results" typeRef="myModel.Results"/>
+        <informationRequirement>
+            <requiredInput href="#node_1"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_2"/>
+        </informationRequirement>
+    </decision>
+    <decision id="node_4" name="Full State Name">
+        <description>Convert the abbreviated State name into the full State name (for example 'CA' into 'California').</description>
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="first">
+                <input bomType="java.lang.String" collection="false" name="the state name"/>
+                <output bomType="java.lang.String" collection="false" name="the full state name"/>
+                <rule defaultRule="true" href="Full%20State%20Name/output-default-setting.drl" kind="BusinessRule" name="output-default-setting"/>
+                <rule defaultRule="false" href="Full%20State%20Name/Convert%20abbreviation.dmt" kind="DecisionTable" name="Convert abbreviation"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_4_ii" name="Full State Name" typeRef="java.lang.String"/>
+        <informationRequirement>
+            <requiredInput href="#node_0"/>
+        </informationRequirement>
+    </decision>
+</definitions></definition>
+</com.ibm.rules.studio.model.decisionmodel:DecisionModel>

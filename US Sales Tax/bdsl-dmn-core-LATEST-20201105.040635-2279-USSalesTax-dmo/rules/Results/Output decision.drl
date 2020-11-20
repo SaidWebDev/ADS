@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.brl:ActionRule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.brl="http://ilog.rules.studio/model/brl.ecore">
+  <name>Output decision</name>
+  <uuid>6ee1a210-cd46-4e36-a504-34ac3d29b38c</uuid>
+  <locale>en_US</locale>
+  <definition><![CDATA[    set decision to a new Results where the average amount is  round( 'the net price' * ( 1 + the state tax of 'the sales tax' + the average local tax of 'the sales tax' ) , 2 ), the max amount is
+         round( 'the net price' * ( 1 + the state tax of 'the sales tax' + the max local tax of 'the sales tax' ) , 2 ), the sales tax is
+         'the sales tax', valid is
+         true ;]]></definition>
+</ilog.rules.studio.model.brl:ActionRule>
