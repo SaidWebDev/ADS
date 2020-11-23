@@ -1,0 +1,8 @@
+{
+  "name": "Avery",
+  "weather": {
+    "temperature": "cold",
+    "rain forecast": 10,
+    "storm alert": false
+  }
+}
