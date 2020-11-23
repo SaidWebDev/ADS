@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?><project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>decisions.alice.commissions</groupId>
+    <artifactId>commissions</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+
+    <packaging>pom</packaging>
+
+    <properties>
+        <engine-compact-runtime.version><![CDATA[2.5.2]]></engine-compact-runtime.version>
+        <ml-integration-runtime.version><![CDATA[6.0.8]]></ml-integration-runtime.version>
+        <ads-mojo.version><![CDATA[3.1.6]]></ads-mojo.version>
+    </properties>
+    <modules>
+        <module>Data</module>
+        <module>Recognized revenue</module>
+        <module>Revenue commissions</module>
+        <module>Sales commissions</module>
+        <module>Tiered commissions</module>
+        <module>.decisionservice</module>
+    </modules>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>com.ibm.decision</groupId>
+                    <artifactId>build-maven-plugin</artifactId>
+                    <version>${ads-mojo.version}</version>
+                    <extensions>true</extensions>
+                <dependencies>
+                        <dependency>
+                            <groupId>com.ibm.decision</groupId>
+                            <artifactId>ml-integration-runtime</artifactId>
+                            <version>${ml-integration-runtime.version}</version>
+                        </dependency>
+                    </dependencies>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+
+</project>
