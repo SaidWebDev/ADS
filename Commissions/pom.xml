@@ -8,9 +8,11 @@
     <packaging>pom</packaging>
 
     <properties>
-        <engine-compact-runtime.version><![CDATA[2.5.2]]></engine-compact-runtime.version>
-        <ml-integration-runtime.version><![CDATA[6.0.8]]></ml-integration-runtime.version>
-        <ads-mojo.version><![CDATA[3.1.6]]></ads-mojo.version>
+        <engine-compact-runtime.version>2.5.3</engine-compact-runtime.version>
+        <ml-integration-runtime.version>6.0.11</ml-integration-runtime.version>
+        <ads-mojo.version>3.1.8</ads-mojo.version>
+    <maven-shade-plugin.version>3.2.4</maven-shade-plugin.version>
+        <maven-dependency-plugin.version>3.1.2</maven-dependency-plugin.version>
     </properties>
     <modules>
         <module>Data</module>
