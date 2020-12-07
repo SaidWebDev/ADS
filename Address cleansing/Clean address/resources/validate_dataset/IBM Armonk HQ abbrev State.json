@@ -1,0 +1,11 @@
+{
+  "address": {
+    "street": "New Orchard Road",
+    "secondaryAddressInfo": "",
+    "city": "Armonk",
+    "state": "NY",
+    "zipCode": "10504",
+    "addressee": "International Business Machines Corp.",
+    "lastLine": ""
+  }
+}
