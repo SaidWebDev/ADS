@@ -1,0 +1,52 @@
+
+# decisions.mf_test13.ml_based_loan_approval.loanRiskScore.Input
+decisions.mf_test13.ml_based_loan_approval.loanRiskScore.Input#concept.label = ML model input
+decisions.mf_test13.ml_based_loan_approval.loanRiskScore.Input.Input(java.lang.Double,java.lang.Double,java.lang.Double,java.lang.Double,java.lang.Double,java.lang.Double)#phrase.navigation = a new {ML model input} where {0, creditscore} {1, income} {2, loanamount} {3, monthduration} {4, rate} {5, yearlyreimbursement} 
+decisions.mf_test13.ml_based_loan_approval.loanRiskScore.Input.creditscore#phrase.action = set the creditscore of {this} to {creditscore}
+decisions.mf_test13.ml_based_loan_approval.loanRiskScore.Input.creditscore#phrase.addition_setter = add {creditscore} to the creditscore of {this}
+decisions.mf_test13.ml_based_loan_approval.loanRiskScore.Input.creditscore#phrase.navigation = {creditscore} of {this}
+decisions.mf_test13.ml_based_loan_approval.loanRiskScore.Input.creditscore#phrase.subtraction_setter = subtract {creditscore} from the creditscore of {this}
+decisions.mf_test13.ml_based_loan_approval.loanRiskScore.Input.income#phrase.action = set the income of {this} to {income}
+decisions.mf_test13.ml_based_loan_approval.loanRiskScore.Input.income#phrase.addition_setter = add {income} to the income of {this}
+decisions.mf_test13.ml_based_loan_approval.loanRiskScore.Input.income#phrase.navigation = {income} of {this}
+decisions.mf_test13.ml_based_loan_approval.loanRiskScore.Input.income#phrase.subtraction_setter = subtract {income} from the income of {this}
+decisions.mf_test13.ml_based_loan_approval.loanRiskScore.Input.loanamount#phrase.action = set the loanamount of {this} to {loanamount}
+decisions.mf_test13.ml_based_loan_approval.loanRiskScore.Input.loanamount#phrase.addition_setter = add {loanamount} to the loanamount of {this}
+decisions.mf_test13.ml_based_loan_approval.loanRiskScore.Input.loanamount#phrase.navigation = {loanamount} of {this}
+decisions.mf_test13.ml_based_loan_approval.loanRiskScore.Input.loanamount#phrase.subtraction_setter = subtract {loanamount} from the loanamount of {this}
+decisions.mf_test13.ml_based_loan_approval.loanRiskScore.Input.monthduration#phrase.action = set the monthduration of {this} to {monthduration}
+decisions.mf_test13.ml_based_loan_approval.loanRiskScore.Input.monthduration#phrase.addition_setter = add {monthduration} to the monthduration of {this}
+decisions.mf_test13.ml_based_loan_approval.loanRiskScore.Input.monthduration#phrase.navigation = {monthduration} of {this}
+decisions.mf_test13.ml_based_loan_approval.loanRiskScore.Input.monthduration#phrase.subtraction_setter = subtract {monthduration} from the monthduration of {this}
+decisions.mf_test13.ml_based_loan_approval.loanRiskScore.Input.rate#phrase.action = set the rate of {this} to {rate}
+decisions.mf_test13.ml_based_loan_approval.loanRiskScore.Input.rate#phrase.addition_setter = add {rate} to the rate of {this}
+decisions.mf_test13.ml_based_loan_approval.loanRiskScore.Input.rate#phrase.navigation = {rate} of {this}
+decisions.mf_test13.ml_based_loan_approval.loanRiskScore.Input.rate#phrase.subtraction_setter = subtract {rate} from the rate of {this}
+decisions.mf_test13.ml_based_loan_approval.loanRiskScore.Input.yearlyreimbursement#phrase.action = set the yearlyreimbursement of {this} to {yearlyreimbursement}
+decisions.mf_test13.ml_based_loan_approval.loanRiskScore.Input.yearlyreimbursement#phrase.addition_setter = add {yearlyreimbursement} to the yearlyreimbursement of {this}
+decisions.mf_test13.ml_based_loan_approval.loanRiskScore.Input.yearlyreimbursement#phrase.navigation = {yearlyreimbursement} of {this}
+decisions.mf_test13.ml_based_loan_approval.loanRiskScore.Input.yearlyreimbursement#phrase.subtraction_setter = subtract {yearlyreimbursement} from the yearlyreimbursement of {this}
+
+# decisions.mf_test13.ml_based_loan_approval.loanRiskScore.Output
+decisions.mf_test13.ml_based_loan_approval.loanRiskScore.Output#concept.label = ML model output
+decisions.mf_test13.ml_based_loan_approval.loanRiskScore.Output.Output(java.lang.String,java.lang.String,boolean,java.lang.Double,java.lang.Double)#phrase.navigation = a new {ML model output} where {0, error code} {1, error message} {2, in error} {3, probability no paymentdefault} {4, probability paymentdefault} 
+decisions.mf_test13.ml_based_loan_approval.loanRiskScore.Output.errorCode#phrase.action = set the error code of {this} to {error code}
+decisions.mf_test13.ml_based_loan_approval.loanRiskScore.Output.errorCode#phrase.navigation = {error code} of {this}
+decisions.mf_test13.ml_based_loan_approval.loanRiskScore.Output.errorMessage#phrase.action = set the error message of {this} to {error message}
+decisions.mf_test13.ml_based_loan_approval.loanRiskScore.Output.errorMessage#phrase.navigation = {error message} of {this}
+decisions.mf_test13.ml_based_loan_approval.loanRiskScore.Output.inError#phrase.action[0] = {this} gets in error only if {in error}
+decisions.mf_test13.ml_based_loan_approval.loanRiskScore.Output.inError#phrase.action[1] = make it {in error} that {this} is in error
+decisions.mf_test13.ml_based_loan_approval.loanRiskScore.Output.inError#phrase.action[1].deprecated = true
+decisions.mf_test13.ml_based_loan_approval.loanRiskScore.Output.inError#phrase.navigation = {this} is in error
+decisions.mf_test13.ml_based_loan_approval.loanRiskScore.Output.inError#phrase.negative_predicate = {this} is not in error
+decisions.mf_test13.ml_based_loan_approval.loanRiskScore.Output.inError#phrase.negative_predicate_setter = {this} does not get in error
+decisions.mf_test13.ml_based_loan_approval.loanRiskScore.Output.inError#phrase.positive_predicate_setter = {this} gets in error
+decisions.mf_test13.ml_based_loan_approval.loanRiskScore.Output.probabilityNoPaymentdefault#phrase.action = set the probability no paymentdefault of {this} to {probability no paymentdefault}
+decisions.mf_test13.ml_based_loan_approval.loanRiskScore.Output.probabilityNoPaymentdefault#phrase.addition_setter = add {probability no paymentdefault} to the probability no paymentdefault of {this}
+decisions.mf_test13.ml_based_loan_approval.loanRiskScore.Output.probabilityNoPaymentdefault#phrase.navigation = {probability no paymentdefault} of {this}
+decisions.mf_test13.ml_based_loan_approval.loanRiskScore.Output.probabilityNoPaymentdefault#phrase.subtraction_setter = subtract {probability no paymentdefault} from the probability no paymentdefault of {this}
+decisions.mf_test13.ml_based_loan_approval.loanRiskScore.Output.probabilityPaymentdefault#phrase.action = set the probability paymentdefault of {this} to {probability paymentdefault}
+decisions.mf_test13.ml_based_loan_approval.loanRiskScore.Output.probabilityPaymentdefault#phrase.addition_setter = add {probability paymentdefault} to the probability paymentdefault of {this}
+decisions.mf_test13.ml_based_loan_approval.loanRiskScore.Output.probabilityPaymentdefault#phrase.navigation = {probability paymentdefault} of {this}
+decisions.mf_test13.ml_based_loan_approval.loanRiskScore.Output.probabilityPaymentdefault#phrase.subtraction_setter = subtract {probability paymentdefault} from the probability paymentdefault of {this}
+decisions.mf_test13.ml_based_loan_approval.loanRiskScore.Output.run(decisions.mf_test13.ml_based_loan_approval.loanRiskScore.Input)#phrase.navigation = predict({0})
