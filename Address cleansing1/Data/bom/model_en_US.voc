@@ -1,0 +1,27 @@
+
+# Term: secondary address information
+@secondary\ address\ information#plural = secondary address information
+
+# AdressRecord
+AdressRecord#concept.documentation = 
+AdressRecord#concept.label = Address Record
+AdressRecord.AdressRecord(java.lang.String,java.lang.String,java.util.List,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)#phrase.navigation = a new {Address Record} where {0, addressee} {1, city} {2, error} {3, last line} {4, secondary address information} {5, state} {6, street} {7, ZIP code}
+AdressRecord.addTo_errors(java.lang.String)#phrase.action = add {0} to the errors of {this}
+AdressRecord.addressee#phrase.action = set the addressee of {this} to {addressee}
+AdressRecord.addressee#phrase.navigation = {addressee} of {this}
+AdressRecord.city#phrase.action = set the city of {this} to {city}
+AdressRecord.city#phrase.navigation = {city} of {this}
+AdressRecord.clear_errors()#phrase.action = clear the errors of {this}
+AdressRecord.errors#phrase.action = set the errors of {this} to {error}
+AdressRecord.errors#phrase.navigation = {error} of {this}
+AdressRecord.lastLine#phrase.action = set the last line of {this} to {last line}
+AdressRecord.lastLine#phrase.navigation = {last line} of {this}
+AdressRecord.removeFrom_errors(java.lang.String)#phrase.action = remove {0} from the errors of {this}
+AdressRecord.secondaryAddressInfo#phrase.action = set the secondary address information of {this} to {secondary address information}
+AdressRecord.secondaryAddressInfo#phrase.navigation = {secondary address information} of {this}
+AdressRecord.state#phrase.action = set the state of {this} to {state}
+AdressRecord.state#phrase.navigation = {state} of {this}
+AdressRecord.street#phrase.action = set the street of {this} to {street}
+AdressRecord.street#phrase.navigation = {street} of {this}
+AdressRecord.zipCode#phrase.action = set the ZIP code of {this} to {ZIP code}
+AdressRecord.zipCode#phrase.navigation = {ZIP code} of {this}
