@@ -1,0 +1,169 @@
+
+
+public class Baggage
+        property "ads.typeId" "1"
+        property "com.fasterxml.jackson.annotation.JsonTypeName" "Baggage"
+        property "de.generated" "true"
+{
+    public java.util.List bag domain 0,* class BaggageItem
+                property "ads.attributeId" "1"
+                property "com.fasterxml.jackson.annotation.JsonProperty" "bag"
+                property update "true";
+    public string newAttribute
+                property "ads.attributeId" "3"
+                property "com.fasterxml.jackson.annotation.JsonProperty" "new attribute"
+                property update "true";
+    public string newAttribute1
+                property "ads.attributeId" "4"
+                property "com.fasterxml.jackson.annotation.JsonProperty" "new attribute 1"
+                property update "true";
+    public Baggage(java.util.List bag domain 0,* class BaggageItem, 
+        string newAttribute, 
+        string newAttribute1)
+                property autoExpand "true"
+                property beanConstructor "true"
+                property groups "BALA"
+                property prototype "true";
+    public Baggage()
+                property "dataio.default" "true";
+    public void addTo_bag(BaggageItem bag)
+                property collectionAttribute "bag"
+                property update "true";
+    public void clear_bag()
+                property collectionAttribute "bag"
+                property update "true";
+    public void removeFrom_bag(BaggageItem bag)
+                property collectionAttribute "bag"
+                property update "true";
+    public void set_bag(java.util.Collection bag domain 0,* class BaggageItem)
+                property collectionAttribute "bag"
+                property update "true";
+}
+
+public class BaggageItem
+        property "ads.typeId" "2"
+        property "com.fasterxml.jackson.annotation.JsonTypeName" "Baggage Item"
+        property "de.generated" "true"
+{
+    public double depth
+                property "ads.attributeId" "1"
+                property "com.fasterxml.jackson.annotation.JsonProperty" "depth"
+                property update "true";
+    public double height
+                property "ads.attributeId" "2"
+                property "com.fasterxml.jackson.annotation.JsonProperty" "height"
+                property update "true";
+    public double weight
+                property "ads.attributeId" "3"
+                property "com.fasterxml.jackson.annotation.JsonProperty" "weight"
+                property update "true";
+    public double width
+                property "ads.attributeId" "4"
+                property "com.fasterxml.jackson.annotation.JsonProperty" "width"
+                property update "true";
+    public BaggageItem(double depth, double height, double weight, double width)
+                property autoExpand "true"
+                property beanConstructor "true"
+                property groups "BALA"
+                property prototype "true";
+    public BaggageItem()
+                property "dataio.default" "true";
+}
+
+public class Booking
+        property "ads.typeId" "3"
+        property "com.fasterxml.jackson.annotation.JsonTypeName" "Booking"
+        property "de.generated" "true"
+{
+    public java.lang.Long bags
+                property "ads.attributeId" "1"
+                property "com.fasterxml.jackson.annotation.JsonProperty" "bags"
+                property update "true";
+    public FareClass fareClass
+                property "ads.attributeId" "2"
+                property "com.fasterxml.jackson.annotation.JsonProperty" "fare class"
+                property update "true";
+    public string fareCode
+                property "ads.attributeId" "3"
+                property "com.fasterxml.jackson.annotation.JsonProperty" "fare code"
+                property update "true";
+    public Booking(java.lang.Long bags, FareClass fareClass, string fareCode)
+                property autoExpand "true"
+                property beanConstructor "true"
+                property groups "BALA"
+                property prototype "true";
+    public Booking()
+                property "dataio.default" "true";
+}
+
+public class Car
+        property "ads.typeId" "8"
+        property "com.fasterxml.jackson.annotation.JsonTypeName" "Car"
+        property "de.generated" "true"
+{
+    public Car()
+                property autoExpand "true"
+                property beanConstructor "true"
+                property "dataio.default" "true"
+                property groups "BALA"
+                property prototype "true";
+}
+
+public class Cool
+        property "ads.typeId" "10"
+        property "com.fasterxml.jackson.annotation.JsonTypeName" "cool"
+        property "de.generated" "true"
+{
+    public Cool()
+                property autoExpand "true"
+                property beanConstructor "true"
+                property "dataio.default" "true"
+                property groups "BALA"
+                property prototype "true";
+}
+
+public class FareClass
+        extends java.lang.Enum
+        property "ads.typeId" "5"
+        property "com.fasterxml.jackson.annotation.JsonTypeName" "Fare Class"
+        property "de.generated" "true"
+{
+    domain {static business, static economy, static first, static premiumEconomy}
+    public static final readonly FareClass business
+                property "ads.attributeId" "1"
+                property "com.fasterxml.jackson.annotation.JsonProperty" "Business";
+    public static final readonly FareClass economy
+                property "ads.attributeId" "2"
+                property "com.fasterxml.jackson.annotation.JsonProperty" "Economy";
+    public static final readonly FareClass first
+                property "ads.attributeId" "3"
+                property "com.fasterxml.jackson.annotation.JsonProperty" "First";
+    public static final readonly FareClass premiumEconomy
+                property "ads.attributeId" "4"
+                property "com.fasterxml.jackson.annotation.JsonProperty" "Premium Economy";
+}
+
+public class FrequentFlyerLevel
+        extends java.lang.Enum
+        property "ads.typeId" "6"
+        property "com.fasterxml.jackson.annotation.JsonTypeName" "Frequent Flyer Level"
+        property "de.generated" "true"
+{
+    domain {static bronze, static gold, static none, static platinum, static silver}
+    public static final readonly FrequentFlyerLevel bronze
+                property "ads.attributeId" "1"
+                property "com.fasterxml.jackson.annotation.JsonProperty" "Bronze";
+    public static final readonly FrequentFlyerLevel gold
+                property "ads.attributeId" "2"
+                property "com.fasterxml.jackson.annotation.JsonProperty" "Gold";
+    public static final readonly FrequentFlyerLevel none
+                property "ads.attributeId" "3"
+                property "com.fasterxml.jackson.annotation.JsonProperty" "None";
+    public static final readonly FrequentFlyerLevel platinum
+                property "ads.attributeId" "4"
+                property "com.fasterxml.jackson.annotation.JsonProperty" "Platinum";
+    public static final readonly FrequentFlyerLevel silver
+                property "ads.attributeId" "5"
+                property "com.fasterxml.jackson.annotation.JsonProperty" "Silver";
+}
+

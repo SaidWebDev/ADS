@@ -1,0 +1,18 @@
+{
+  "frequentFlyerStatus": "Bronze",
+  "initialBooking": {
+    "bags": 0,
+    "fare class": "Business",
+    "fare code": "Y"
+  },
+  "checkedBaggage": {
+    "bag": [
+      {
+        "weight": 24,
+        "height": 0.6,
+        "depth": 0.3,
+        "width": 0.8
+      }
+    ]
+  }
+}

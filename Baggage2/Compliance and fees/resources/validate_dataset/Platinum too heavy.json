@@ -1,0 +1,18 @@
+{
+  "frequentFlyerStatus": "Platinum",
+  "initialBooking": {
+    "fare code": "Y",
+    "fare class": "Economy",
+    "bags": 1
+  },
+  "checkedBaggage": {
+    "bag": [
+      {
+        "width": 0.4,
+        "depth": 0.3,
+        "height": 0.8,
+        "weight": 28
+      }
+    ]
+  }
+}
