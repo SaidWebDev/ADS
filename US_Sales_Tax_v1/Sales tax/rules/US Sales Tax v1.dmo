@@ -65,6 +65,7 @@
         <extensionElements>
             <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="first">
                 <input bomType="java.lang.String" collection="false" name="the state name"/>
+                <input bomType="myModel.SalesTax" collection="false" name="myType"/>
                 <output bomType="java.lang.String" collection="false" name="the full state name"/>
                 <rule defaultRule="true" href="Full%20State%20Name/output-default-setting.drl" kind="BusinessRule" name="output-default-setting"/>
                 <rule defaultRule="false" href="Full%20State%20Name/Convert%20abbreviation.dmt" kind="DecisionTable" name="Convert abbreviation"/>
@@ -74,6 +75,38 @@
         <informationRequirement>
             <requiredInput href="#node_0"/>
         </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_5"/>
+        </informationRequirement>
     </decision>
+    <inputData id="node_5" name="myType">
+        <extensionElements>
+            <initialization xmlns="http://www.ibm.com/spec/ODM/dmn.xsd">
+                <output bomType="myModel.SalesTax" collection="false" name="myType"/>
+            </initialization>
+        </extensionElements>
+        <variable id="node_5_ii" name="myType" typeRef="myModel.SalesTax"/>
+    </inputData>
+    <decision id="node_6" name="hello">
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="java.lang.String" collection="false" name="name"/>
+                <output bomType="java.lang.String" collection="false" name="hello"/>
+                <rule defaultRule="false" href="node_6/salutation.drl" kind="BusinessRule" name="salutation"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_6_ii" name="hello" typeRef="java.lang.String"/>
+        <informationRequirement>
+            <requiredInput href="#node_7"/>
+        </informationRequirement>
+    </decision>
+    <inputData id="node_7" name="name">
+        <extensionElements>
+            <initialization xmlns="http://www.ibm.com/spec/ODM/dmn.xsd">
+                <output bomType="java.lang.String" collection="false" name="name"/>
+            </initialization>
+        </extensionElements>
+        <variable id="node_7_ii" name="name" typeRef="java.lang.String"/>
+    </inputData>
 </definitions></definition>
 </com.ibm.rules.studio.model.decisionmodel:DecisionModel>
